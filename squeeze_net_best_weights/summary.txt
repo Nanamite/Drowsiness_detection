@@ -1,0 +1,8 @@
+model: squeeze_net
+pretrained: True
+learning rate: 0.0001
+epcohs_trained: 20
+batch size: 64
+optimizer: adam
+best loss: 0.08151522580817988
+best test acc: 0.9772916666666667
