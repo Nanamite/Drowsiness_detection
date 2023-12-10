@@ -1,7 +1,7 @@
 # Drowsiness_detection - (Project - EE2802, PRML)
 
 ***************************************
-K R Nandakishore\\
+K R Nandakishore\n
 EE21BTECH11027
 ***************************************
 
