@@ -1,0 +1,8 @@
+model: mobile_net
+pretrained: False
+learning rate: 8e-05
+epcohs_trained: 10
+batch size: 64
+optimizer: adam
+best loss: 1.0712793158477651
+best test acc: 0.3510416666666667

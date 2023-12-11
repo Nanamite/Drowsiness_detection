@@ -14,7 +14,7 @@ if torch.cuda.is_available():
 else:
     device = 'cpu'
 
-pretrained = True
+pretrained = False
 model_name = 'mobile_net'
 if model_name == 'mobile_net':
     model = gen_mobile_net(pretrained).to(device)

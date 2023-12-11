@@ -2,10 +2,11 @@ import torch
 import torchvision.transforms as transform
 import cv2 as cv
 import numpy as np
-from detect import detect
+from detect_eye import detect
 from utilities import *
 from generate_model import *
 from beep import make_beep
+import time
 
 device = 'cpu'
 

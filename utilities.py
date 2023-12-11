@@ -6,10 +6,8 @@ import numpy as np
 def conv_image(img):
     if(len(img.shape) == 3):
         img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
-    resize = transform.Resize(52)
     tensor = transform.ToTensor()
     img = tensor(img)
-    #img = resize(img)
     normalize = transform.Normalize(mean = [0.335], std = [0.0132])
     img = normalize(img)
     img = img.unsqueeze(0)
