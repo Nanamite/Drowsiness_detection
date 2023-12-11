@@ -17,4 +17,4 @@ The face and eye detection module is coded within detect_eye.py. Here OpenCV's C
 
 ### To train and validate models:
 
-model_train_validate.py is used to train and validate a model with the provided dataset. It also gives the test accuracy of the best weights obtained in the entire run.
+model_train_validate.py is used to train and validate a model with the provided dataset. It also gives the test accuracy of the best weights obtained in the entire run. example udate
