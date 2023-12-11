@@ -12,4 +12,8 @@ https://www.kaggle.com/datasets/kutaykutlu/drowsiness-detection/data
 Haar XML files obtained from: https://github.com/opencv/opencv/tree/master/data/haarcascades
 
 The main implementation can be executed by running main.py. utilities.py consists of supporting functions for main.py. 
-The face and eye detection module is coded within detect_eye.py. Here OpenCV's Cascade Classifiers are used.
+
+The face and eye detection module is coded within detect_eye.py. Here OpenCV's Cascade Classifiers are used. 
+
+To train and validate models:
+*****************************
