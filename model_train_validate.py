@@ -127,7 +127,7 @@ elif model_name == 'squeeze_net':
     model = gen_squeeze_net(False).to(device)
 model.load_state_dict(torch.load(best_model))
 
-val_acc, confusion = validate(model, device)
+val_acc, confusion, _ = validate(model, device)
 
 confusion.savefig(os.path.join(save_dir, 'acc.jpg'))
 

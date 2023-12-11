@@ -31,11 +31,11 @@ def validate(model, device):
 
     cf_matrix = confusion_matrix(targets, preds)
 
-    cf_matrix = cf_matrix/np.sum(cf_matrix, axis= 1)
+    cf_matrix_normalized = cf_matrix/np.sum(cf_matrix, axis= 1)
 
-    df_matrix = pd.DataFrame(cf_matrix, index= [0, 1], columns = [0, 1])
+    df_matrix = pd.DataFrame(cf_matrix_normalized, index= [0, 1], columns = [0, 1])
 
-    val_acc = np.sum([cf_matrix[i, i] for i in range(2)])/2
+    val_acc = np.sum([cf_matrix_normalized[i, i] for i in range(2)])/2
     print("average test_acc: ", val_acc)
 
     fig = plt.figure()
@@ -44,7 +44,7 @@ def validate(model, device):
     plt.ylabel("true label")
     plt.xlabel("predicted label")
 
-    return val_acc, fig
+    return val_acc, fig, cf_matrix
 
 if __name__ == '__main__':
     if torch.cuda.is_available():
@@ -53,10 +53,19 @@ if __name__ == '__main__':
         device = 'cpu'
 
 
-    model = gen_mobile_net(False).to(device)
-    model.load_state_dict(torch.load(r'mobile_net_saves_new\2\best_model.pth'))
+    model = gen_squeeze_net(False).to(device)
+    model.load_state_dict(torch.load(r'squeeze_net_best_weights\best_model.pth'))
 
-    validate(model, device)
+    _, _, cf = validate(model, device)
+
+    tp = np.diag(cf)
+    fp = np.sum(cf, axis = 0) - tp
+    fn = np.sum(cf, axis = 1) - tp
+
+    precision = np.sum(tp)/(np.sum(tp) + np.sum(fp))
+    recall = np.sum(tp)/(np.sum(tp) + np.sum(fn))
+
+    print("precision and recall: ", precision, ', ', recall)
 
 
 
