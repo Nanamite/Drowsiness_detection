@@ -1,5 +1,4 @@
 import torch
-import torchvision.transforms as transform
 import cv2 as cv
 import numpy as np
 from detect_eye import detect

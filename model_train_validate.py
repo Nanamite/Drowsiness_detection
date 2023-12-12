@@ -22,6 +22,8 @@ parser.add_argument('--pretrained', type= bool, default= True)
 parser.add_argument('--batch_size', type= int, default= 64)
 parser.add_argument('--epochs', type= int, default= 10)
 parser.add_argument('--learning_rate', type= float, default= 1e-4)
+parser.add_argument('--optimizer', type = str, default= 'Adam')
+parser.add_argument('--weight_decay', type = float, default= 5e-4)
 
 args = parser.parse_args()
 
@@ -31,11 +33,14 @@ if model_name == 'mobile_net':
     model = gen_mobile_net(pretrained).to(device)
 elif model_name == 'squeeze_net':
     model = gen_squeeze_net(pretrained).to(device)
+else:
+    print('Not supported, need to change in source code')
 
 #setting the hyperparameters
 batch_size = args.batch_size
 epochs = args.epochs
 lr = args.learning_rate
+weight_decay = args.weight_decay
 
 train_loader, val_loader, test_loader = prep(batch_size= batch_size, shuffle= True)
 
@@ -44,8 +49,14 @@ print("validation images: ", len(val_loader))
 
 #setting the loss function and optimizer
 criterion = nn.CrossEntropyLoss()
-optimizer_used = 'adam'
-optimizer = optim.Adam(model.parameters(), lr, weight_decay= 5e-4)
+optimizer_used = args.optimizer
+
+if optimizer_used == 'Adam':
+    optimizer = optim.Adam(model.parameters(), lr, weight_decay= 5e-4)
+elif optimizer_used == 'SGD':
+    optimizer = optim.SGD(model.parameters(), lr, weight_decay= weight_decay)
+else:
+    print('Not supported, need to change in source code')
 
 #setting up path for saving model weights
 directory = rf'.\{model_name}_saves'
