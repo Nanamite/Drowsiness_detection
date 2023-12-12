@@ -6,7 +6,7 @@ K R Nandakishore
 EE21BTECH11027
 ***************************************
 
-This project aims to solve the problem drowsiness while driving by implementing an alarm based system combined with Deep Learning.
+Long night drives are inevitable once in a while. It often tends to make inexperienced drivers feel sleepy and tired. This potentially can lead to life-threatening accidents. This project aims to solve the problem of drowsiness while driving by implementing an alarm based system combined with Deep Learning.
 
 ***************************************
 Dataset is a modified version of a kaggle dataset. Link to the kaggle dataset:
