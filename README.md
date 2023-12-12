@@ -27,3 +27,45 @@ Copy the following code snippet onto terminal to run the example implementation:
 ```
 python main.py --model squeeze_net --weights squeeze_net_best_weights\best_model.pth
 ```
+
+### Other file details
+
+#### beep.py:
+
+This contains a code snippet that makes a beep sound
+
+#### detect_eye.py
+
+This contains the code snippet that detects the face, left eye and right eye within a frame and returns it
+
+#### generate_model.py
+
+This generates and returns the required pytorch model
+
+#### model_description.py
+
+This generates the summary of mobile_net and squeeze_net
+
+#### organize_Data.py
+
+This was used to organize the kaggle dataset to the one seen in the folder data
+
+#### prepare_data.py
+
+It creates dataloaders and returns it
+
+#### test_acc.py
+
+It tests the accuracy of the given model with the given weights and returns the test accuracy, precision and recall
+
+#### utilities.py
+
+Contain supporting code snippets for main.py
+
+#### visualize_dataset.ipynb
+
+A notebook that visualizes the organized dataset
+
+#### visualize_model_output.ipynb
+
+Shows the prediction of model with the respective inference time. Showcases the effect of warmup too
