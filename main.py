@@ -13,7 +13,7 @@ device = 'cpu'
 
 parser = ap.ArgumentParser()
 
-parser.add_argument('--model', type = str, default = 'mobile_net')
+parser.add_argument('--model', type = str, default = 'squeeze_net')
 parser.add_argument('--weights', type = str)
 
 args = parser.parse_args()
