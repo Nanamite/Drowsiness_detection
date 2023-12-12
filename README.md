@@ -41,6 +41,10 @@ Contains the train, val and test sets with class distributio of 1:1 each
 
 Contains the XML files for haar cascade filters of OpenCV
 
+### implementation_recording
+
+Contains the recording of example implementations using both MobileNet v2 and SqueezeNet as well
+
 #### beep.py:
 
 This contains a code snippet that makes a beep sound
