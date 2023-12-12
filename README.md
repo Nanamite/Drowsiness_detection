@@ -10,6 +10,8 @@ EE21BTECH11027
 Dataset is a modified version of a kaggle dataset. Link to the kaggle dataset:
 https://www.kaggle.com/datasets/kutaykutlu/drowsiness-detection/data
 
+Only the processed dataset is available in this repository
+
 Haar XML files obtained from: https://github.com/opencv/opencv/tree/master/data/haarcascades.
 
 ### To train and validate models:
