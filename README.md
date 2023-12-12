@@ -18,6 +18,6 @@ The face and eye detection module is coded within detect_eye.py. Here OpenCV's C
 ### To train and validate models:
 
 model_train_validate.py is used to train and validate a model with the provided dataset. It also gives the test accuracy of the best weights obtained in the entire run. Copy the following code onto the terminal to run it.
-'''
+```
 python model_train_validate.py --model mobile_net --pretrained True --batch_size 64 --epochs 10 --learning_rate 1e-4
-'''
+```
