@@ -63,7 +63,7 @@ It tests the accuracy of the given model with the given weights and returns the 
 
 Copy the following code onto terminal to run it
 ```
-python test_acc.py --model squeeze_net --weights squeeze_net_best_weights\best_model.pths
+python test_acc.py --model squeeze_net --weights squeeze_net_best_weights\best_model.pth
 ```
 
 #### utilities.py
