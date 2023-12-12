@@ -7,12 +7,26 @@ from utilities import *
 from generate_model import *
 from beep import make_beep
 import time
+import argparse as ap
 
 device = 'cpu'
 
-model = gen_squeeze_net(False)
+parser = ap.ArgumentParser()
+
+parser.add_argument('--model', type = str, default = 'mobile_net')
+parser.add_argument('--weights', type = str)
+
+args = parser.parse_args()
+
+if args.model == 'mobile_net':
+    model = gen_mobile_net(False)
+elif args.model == 'squeeze_net':
+    model = gen_squeeze_net(False)
+else:
+    print('model not supported')
+
 model = model.to(device)
-model.load_state_dict(torch.load(r'squeeze_net_best_weights\best_model.pth'))
+model.load_state_dict(torch.load(args.weights))
 model.eval()
 
 warmup(model)
