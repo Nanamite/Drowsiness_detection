@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sn
-
+import argparse as ap
 
 
 def validate(model, device):
@@ -52,9 +52,20 @@ if __name__ == '__main__':
     else:
         device = 'cpu'
 
+    parser = ap.ArgumentParser()
 
-    model = gen_squeeze_net(False).to(device)
-    model.load_state_dict(torch.load(r'squeeze_net_best_weights\best_model.pth'))
+    parser.add_argument('--model', type = str, default = 'squeeze_net')
+    parser.add_argument('--weights', type= str)
+
+    args = parser.parse_args()
+
+    if args.model == 'mobile_net':
+        model = gen_mobile_net(False).to(device)
+    elif args.model == 'squeeze_net':
+        model = gen_squeeze_net(False).to(device)
+    else:
+        print("Not supported, change in source code")
+    model.load_state_dict(torch.load(args.weights))
 
     _, _, cf = validate(model, device)
 
