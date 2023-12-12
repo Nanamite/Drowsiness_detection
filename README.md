@@ -33,6 +33,14 @@ python main.py --model squeeze_net --weights squeeze_net_best_weights\best_model
 
 ### Other file details
 
+### data
+
+Contains the train, val and test sets with class distributio of 1:1 each
+
+### haar_xml
+
+Contains the XML files for haar cascade filters of OpenCV
+
 #### beep.py:
 
 This contains a code snippet that makes a beep sound
