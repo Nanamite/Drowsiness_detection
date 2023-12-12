@@ -65,7 +65,7 @@ This generates the summary of mobile_net and squeeze_net
 
 #### organize_Data.py
 
-This was used to organize the kaggle dataset to the one seen in the folder data
+This was used to organize the kaggle dataset to the one seen in the folder data. *Note*: this requires the kaggle dataset to be downloaded in this directory as kaggle_dataset to work
 
 #### prepare_data.py
 
