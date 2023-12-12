@@ -22,3 +22,8 @@ Only mobile_net and squeeze_net is supported for training here, to include other
 ### To run example implementation
 
 main.py can be executed to run the example implementation. Example runs have been recorded and are saved in implementation_recording.
+
+Copy the following code snippet onto terminal to run the example implementation:
+```
+python main.py --model squeeze_net --weights squeeze_net_best_weights\best_model.pth
+```
