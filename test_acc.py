@@ -62,8 +62,8 @@ if __name__ == '__main__':
     fp = np.sum(cf, axis = 0) - tp
     fn = np.sum(cf, axis = 1) - tp
 
-    precision = np.sum(tp)/(np.sum(tp) + np.sum(fp))
-    recall = np.sum(tp)/(np.sum(tp) + np.sum(fn))
+    precision = np.mean(tp/(tp + fp))
+    recall = np.mean(tp/(tp + fn))
 
     print("precision and recall: ", precision, ', ', recall)
 
